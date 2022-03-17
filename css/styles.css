@@ -2,8 +2,24 @@
 
 body,
 html {
+  /* fallback font for the body */
   font-family: "Poppins", sans-serif;
   height: 100%;
+}
+
+.navigation {
+  background: #1d1c1c;
+}
+
+.navigation > div > a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 22.4px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ff9900;
+  padding: 0 2em;
 }
 
 .cover {
