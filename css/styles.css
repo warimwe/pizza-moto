@@ -54,7 +54,7 @@ html {
 
 .logo {
   margin-top: 3em;
-  margin-bottom: 5em;
+  margin-bottom: 4em;
 }
 
 .intro-heading {
@@ -98,7 +98,16 @@ html {
   line-height: 52px;
   font-weight: 700;
   text-align: center;
-  padding-bottom: 1.5em;
+}
+
+.pizza-head {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 0.8em;
 }
 
 .ingredients {
@@ -109,8 +118,23 @@ html {
   text-align: center;
 }
 
+@media only screen and (min-width: 1024px) {
+  .logo {
+    margin-top: 3em;
+    margin-bottom: 7em;
+  }
+  .ingredients {
+    padding: 0 5em;
+  }
+}
+
+.menu {
+  padding-bottom: 2em;
+}
+
 .history {
   padding-top: 3em;
+  padding-bottom: 3em;
   background-color: #fafafa;
 }
 
@@ -137,5 +161,46 @@ html {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: white;
+  color: black;
+  border: black 2px solid;
+  text-decoration: none;
+  border-style: none none solid;
+}
+
+.reviews {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: #f2f2f2;
+}
+
+.reviews-img {
+  background-image: url("https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGl6emF8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60");
+  min-height: 50vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.reviews-p > p {
+  text-align: left;
+}
+.reviews-p > h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: 700;
+  text-align: center;
+  text-align: left;
+}
+
+.reviews-p {
+  padding: 5em 2.5em;
+}
+
+.reviews-p > div > p {
+  padding: none;
+  text-align: left;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 300;
+  letter-spacing: 4px;
 }
