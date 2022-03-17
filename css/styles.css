@@ -11,7 +11,7 @@ html {
   background: #1d1c1c;
 }
 
-.navigation > div > a {
+.navigation-item {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 22.4px;
@@ -19,7 +19,7 @@ html {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #ff9900;
-  padding: 0 2em;
+  padding-right: 2em;
 }
 
 .cover {
