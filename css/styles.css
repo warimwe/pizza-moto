@@ -73,12 +73,16 @@ html {
   text-align: center;
 }
 
+.ico {
+  color: #ff9900;
+}
+
 .menu {
   background: #f2f2f2;
   padding-top: 3em;
 }
 
-.menu > .head {
+.head {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   line-height: 21.6px;
@@ -88,11 +92,19 @@ html {
   padding-bottom: 2em;
 }
 
-.menu > .bold-head {
+.bold-head {
   font-family: "Playfair Display", serif;
   font-size: 48px;
   line-height: 52px;
   font-weight: 700;
   text-align: center;
   padding-bottom: 1.5em;
+}
+
+.ingredients {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 25.6px;
+  font-weight: 400;
+  text-align: center;
 }
