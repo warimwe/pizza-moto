@@ -65,7 +65,7 @@ html {
   text-align: center;
 }
 
-.intro-paragraph {
+.paragraph {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 25.6px;
@@ -107,4 +107,24 @@ html {
   line-height: 25.6px;
   font-weight: 400;
   text-align: center;
+}
+
+.history {
+  padding-top: 3em;
+}
+
+.history-img {
+  background-image: url("https://images.unsplash.com/photo-1613564834361-9436948817d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBpenphfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60");
+  min-height: 50vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.history-p > p,
+.history-p > h2 {
+  text-align: left;
+}
+
+.history-p {
+  padding: 5em 2.5em;
 }
