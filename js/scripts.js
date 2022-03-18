@@ -1,14 +1,58 @@
 // Business Logic
 
-function order(size, price, crust, toppings, delivery) {
-  this.size = size;
-  this.price = price;
-  this.crust = crust;
-  this.toppings = toppings;
-  this.delivery = delivery;
-}
+// function order(size, price, crust, toppings, delivery) {
+//   this.size = size;
+//   this.price = price;
+//   this.crust = crust;
+//   this.toppings = toppings;
+//   this.delivery = delivery;
+// }
 
-function crust(name, price) {}
+function totalPrice(size, crust, toppingsArray, delivery, number) {
+  var total = 0;
+  if (size === "regular") {
+    total += 500;
+
+    // Check crusts
+    if (crust === "thin") {
+      total += 100;
+    } else if (crust === "thick") {
+      total += 150;
+    } else if (crust === "deep") {
+      total += 200;
+    }
+
+    // Check toppings
+    if (toppingsArray.includes("cheese")) {
+      total += 50;
+    }
+    if (toppingsArray.includes("artichokes")) {
+      total += 60;
+    }
+    if (toppingsArray.includes("mushrooms")) {
+      total += 55;
+    }
+    if (toppingsArray.includes("mozzarella")) {
+      total += 65;
+    }
+    if (toppingsArray.includes("bacon")) {
+      total += 70;
+    }
+    if (toppingsArray.includes("pepperoni")) {
+      total += 80;
+    }
+
+    // Check number
+    total *= number;
+
+    // Check delivery
+    if (delivery) {
+      total += 120;
+    }
+
+    console.log(total);
+  }
+}
 
 // if (order.size==='large') {
 //   order.price=
@@ -27,13 +71,15 @@ $(document).ready(function () {
   $("form#order").submit(function (event) {
     event.preventDefault();
     var name = $("input#name").val();
-    var flavour = $("select#flavour").find(":selected").text();
-    var size = $("select#size").find(":selected").text();
-    var crust = $("select#crust").find(":selected").text();
+    var flavour = $("select#flavour").find(":selected").val();
+    var size = $("select#size").find(":selected").val();
+    var crust = $("select#crust").find(":selected").val();
     var toppings = $('input[name="toppings"]:checked');
     var number = $("input#number").val();
-    var delivery = $("input#delivery").val();
+    var delivery = $("input#delivery").is(":checked");
     var location = $("textarea#location").val();
+
+    var toppingsArray = [];
 
     console.log("Name:" + name);
     console.log("Flavour:" + flavour);
@@ -43,6 +89,14 @@ $(document).ready(function () {
     console.log("Number:" + number);
     console.log("Delivery:" + delivery);
     console.log("Location:" + location);
+
+    toppings.each(function () {
+      toppingsArray.push(this.value);
+    });
+
+    console.log(toppingsArray);
+
+    totalPrice(size, crust, toppingsArray, delivery, number);
   });
 
   $("form#contact").submit(function (event) {
