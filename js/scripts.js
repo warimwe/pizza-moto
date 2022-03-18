@@ -1,12 +1,12 @@
 // Business Logic
 
-// function order(size, price, crust, toppings, delivery) {
-//   this.size = size;
-//   this.price = price;
-//   this.crust = crust;
-//   this.toppings = toppings;
-//   this.delivery = delivery;
-// }
+function order(size, price, crust, toppings, delivery) {
+  this.size = size;
+  this.price = price;
+  this.crust = crust;
+  this.toppings = toppings;
+  this.delivery = delivery;
+}
 
 function totalPrice(size, crust, toppingsArray, delivery, number) {
   var total = 0;
@@ -51,6 +51,90 @@ function totalPrice(size, crust, toppingsArray, delivery, number) {
     }
 
     console.log(total);
+  } else if (size === "medium") {
+    total += 800;
+
+    // Check crusts
+    if (crust === "thin") {
+      total += 150;
+    } else if (crust === "thick") {
+      total += 200;
+    } else if (crust === "deep") {
+      total += 250;
+    }
+
+    // Check toppings
+    if (toppingsArray.includes("cheese")) {
+      total += 60;
+    }
+    if (toppingsArray.includes("artichokes")) {
+      total += 70;
+    }
+    if (toppingsArray.includes("mushrooms")) {
+      total += 65;
+    }
+    if (toppingsArray.includes("mozzarella")) {
+      total += 75;
+    }
+    if (toppingsArray.includes("bacon")) {
+      total += 80;
+    }
+    if (toppingsArray.includes("pepperoni")) {
+      total += 90;
+    }
+
+    // Check number
+    total *= number;
+
+    // Check delivery
+    if (delivery) {
+      total += 120;
+    }
+
+    console.log(total);
+  } else if (size === "large") {
+    total += 1100;
+
+    // Check crusts
+    if (crust === "thin") {
+      total += 200;
+    } else if (crust === "thick") {
+      total += 250;
+    } else if (crust === "deep") {
+      total += 300;
+    }
+
+    // Check toppings
+    if (toppingsArray.includes("cheese")) {
+      total += 70;
+    }
+    if (toppingsArray.includes("artichokes")) {
+      total += 80;
+    }
+    if (toppingsArray.includes("mushrooms")) {
+      total += 75;
+    }
+    if (toppingsArray.includes("mozzarella")) {
+      total += 85;
+    }
+    if (toppingsArray.includes("bacon")) {
+      total += 90;
+    }
+    if (toppingsArray.includes("pepperoni")) {
+      total += 100;
+    }
+
+    // Check number
+    total *= number;
+
+    // Check delivery
+    if (delivery) {
+      total += 120;
+    }
+
+    console.log(total);
+
+    return total;
   }
 }
 
@@ -69,7 +153,6 @@ $(document).ready(function () {
     }
   });
   $("form#order").submit(function (event) {
-    event.preventDefault();
     var name = $("input#name").val();
     var flavour = $("select#flavour").find(":selected").val();
     var size = $("select#size").find(":selected").val();
@@ -81,22 +164,25 @@ $(document).ready(function () {
 
     var toppingsArray = [];
 
-    console.log("Name:" + name);
-    console.log("Flavour:" + flavour);
-    console.log("Size:" + size);
-    console.log("Crust:" + crust);
-    console.log("Toppings:" + toppings.serialize());
-    console.log("Number:" + number);
-    console.log("Delivery:" + delivery);
-    console.log("Location:" + location);
-
     toppings.each(function () {
       toppingsArray.push(this.value);
     });
 
     console.log(toppingsArray);
 
-    totalPrice(size, crust, toppingsArray, delivery, number);
+    var total = totalPrice(size, crust, toppingsArray, delivery, number);
+
+    // var order1 = order(size, crust, toppingsArray, delivery, number);
+
+    // totalPrice();
+
+    // console.log(order1.size);
+    $("form").reset();
+
+    if (location) {
+    }
+
+    event.preventDefault();
   });
 
   $("form#contact").submit(function (event) {
