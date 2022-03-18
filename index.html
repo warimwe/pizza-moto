@@ -85,7 +85,7 @@
           alt="logo"
           srcset=""
         />
-        <!-- <img class="logo" src="images/logo.png" alt="logo" srcset="" /> -->
+        <!-- <img class="logo" src="images/logo.gif" alt="logo" srcset="" /> -->
         <h2 class="intro-heading px-5 pb-2 welcome-sub">Have a Slice Day</h2>
 
         <p class="paragraph px-5">
@@ -251,6 +251,76 @@
             </select>
 
             <div class="mb-3">
+              <label for="toppings" class="form-label">Choose toppings</label>
+              <div class="row mx-3" id="toppings">
+                <div class="form-check col-md-6">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="cheese"
+                    id="cheese"
+                  />
+                  <label class="form-check-label" for="cheese">
+                    Extra Cheese
+                  </label>
+                </div>
+                <div class="form-check col-md-6">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="artichokes"
+                    id="artichokes"
+                  />
+                  <label class="form-check-label" for="artichokes">
+                    Artichokes
+                  </label>
+                </div>
+                <div class="form-check col-md-6">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="mushrooms"
+                    id="mushrooms"
+                  />
+                  <label class="form-check-label" for="mushrooms">
+                    Mushrooms
+                  </label>
+                </div>
+                <div class="form-check col-md-6">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="mozzarella"
+                    id="mozzarella"
+                  />
+                  <label class="form-check-label" for="mozzarella">
+                    Mozzarella
+                  </label>
+                </div>
+                <div class="form-check col-md-6">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="bacon"
+                    id="bacon"
+                  />
+                  <label class="form-check-label" for="bacon"> Bacon </label>
+                </div>
+                <div class="form-check col-md-6">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="pepperoni"
+                    id="pepperoni"
+                  />
+                  <label class="form-check-label" for="pepperoni">
+                    Pepperoni
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
               <label for="number" class="form-label">Number of Pizzas</label>
               <input
                 type="number"
@@ -263,14 +333,29 @@
               </div>
             </div>
 
-            <div class="">
-              <button type="reset" class="btn btn-warning float-start">
-                Reset
-              </button>
-              <button type="submit" class="btn btn-primary float-end">
-                Submit
-              </button>
+            <div class="form-check form-switch mb-3">
+              <input class="form-check-input" type="checkbox" id="delivery" />
+              <label class="form-check-label" for="delivery"
+                >Do you want the pizza delivered?</label
+              >
             </div>
+
+            <div class="form-floating mb-4">
+              <textarea
+                class="form-control"
+                placeholder="Enter the delivery location"
+                id="location"
+                rows="10"
+              ></textarea>
+              <label for="location">Enter the delivery location</label>
+            </div>
+
+            <button type="reset" class="btn btn-warning float-start">
+              Reset
+            </button>
+            <button type="submit" class="btn btn-primary float-end">
+              Submit
+            </button>
           </form>
         </div>
         <div class="col-md-6 order-img"></div>
