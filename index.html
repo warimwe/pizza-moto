@@ -69,6 +69,9 @@
             <li class="nav-item">
               <a class="nav-link navigation-item" href="#reviews">Reviews</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link navigation-item" href="#order">Order</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -102,42 +105,42 @@
 
       <div class="row text-center m-auto container menu">
         <div class="col-md-6">
-          <h2 class="pizza-head">pear salad</h2>
+          <h2 class="pizza-head">BBQ Chicken Pizza</h2>
           <p class="ingredients">
             Reid’s Orchard Pears / Bitter Greens / Granola / Big Firefly / Farms
             Black and Blue / Pine Nut Vinaigrette
           </p>
         </div>
         <div class="col-md-6">
-          <h2 class="pizza-head">pear salad</h2>
+          <h2 class="pizza-head">Pepperoni Pizza</h2>
           <p class="ingredients">
             Reid’s Orchard Pears / Bitter Greens / Granola / Big Firefly / Farms
             Black and Blue / Pine Nut Vinaigrette
           </p>
         </div>
         <div class="col-md-6">
-          <h2 class="pizza-head">pear salad</h2>
+          <h2 class="pizza-head">Margherita Pizza</h2>
           <p class="ingredients">
             Reid’s Orchard Pears / Bitter Greens / Granola / Big Firefly / Farms
             Black and Blue / Pine Nut Vinaigrette
           </p>
         </div>
         <div class="col-md-6">
-          <h2 class="pizza-head">pear salad</h2>
+          <h2 class="pizza-head">Hawaiian Pizza</h2>
           <p class="ingredients">
             Reid’s Orchard Pears / Bitter Greens / Granola / Big Firefly / Farms
             Black and Blue / Pine Nut Vinaigrette
           </p>
         </div>
         <div class="col-md-6">
-          <h2 class="pizza-head">pear salad</h2>
+          <h2 class="pizza-head">Buffalo Pizza</h2>
           <p class="ingredients">
             Reid’s Orchard Pears / Bitter Greens / Granola / Big Firefly / Farms
             Black and Blue / Pine Nut Vinaigrette
           </p>
         </div>
         <div class="col-md-6">
-          <h2 class="pizza-head">pear salad</h2>
+          <h2 class="pizza-head">Veggie Pizza</h2>
           <p class="ingredients">
             Reid’s Orchard Pears / Bitter Greens / Granola / Big Firefly / Farms
             Black and Blue / Pine Nut Vinaigrette
@@ -190,13 +193,88 @@
             </p>
 
             <div class="pt-3">
-              <p class="head">- James Juma</p>
+              <p class="head">- Jamie Bin Juma</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="order"></div>
+    <div class="order" id="order">
+      <h2 class="bold-head">Make your order</h2>
+      <div class="container row m-auto pt-5">
+        <div class="col-md-6 order-form">
+          <form id="order-form" class="">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">Enter your full name.</div>
+            </div>
+
+            <select
+              class="form-select mb-3"
+              aria-label="Default select example"
+            >
+              <option selected>Choose a flavour</option>
+              <option value="chicken">BBQ Chicken Pizza</option>
+              <option value="pepperoni">Pepperoni Pizza</option>
+              <option value="margherita">Margherita Pizza</option>
+              <option value="hawaiian">Hawaiian Pizza</option>
+              <option value="buffallo">Buffallo Pizza</option>
+              <option value="veggie">Veggie Pizza</option>
+            </select>
+
+            <select
+              class="form-select mb-3"
+              aria-label="Default select example"
+            >
+              <option selected>Choose a size</option>
+              <option value="regular">Regular</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+
+            <select
+              class="form-select mb-3"
+              aria-label="Default select example"
+            >
+              <option selected>Choose a crust</option>
+              <option value="thin">Thin crust</option>
+              <option value="thick">Thick crust</option>
+              <option value="deep">Deep Dish crust</option>
+              <option value="pan">Pan Pizza crust</option>
+            </select>
+
+            <div class="mb-3">
+              <label for="number" class="form-label">Number of Pizzas</label>
+              <input
+                type="number"
+                class="form-control"
+                id="number"
+                aria-describedby="numberHelp"
+              />
+              <div id="numberHelp" class="form-text">
+                Enter the number of pizzas you want to order.
+              </div>
+            </div>
+
+            <div class="">
+              <button type="reset" class="btn btn-warning float-start">
+                Reset
+              </button>
+              <button type="submit" class="btn btn-primary float-end">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 order-img"></div>
+      </div>
+    </div>
   </body>
 </html>

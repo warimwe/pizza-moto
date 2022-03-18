@@ -223,3 +223,21 @@ html {
   letter-spacing: 4px;
   color: #ff9900;
 }
+
+.order {
+  background-color: #fff;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.order-img {
+  background-image: url("https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHBpenphfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60");
+  min-height: 60vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.order-form {
+  padding-right: 5em;
+  padding-top: 5em;
+}
