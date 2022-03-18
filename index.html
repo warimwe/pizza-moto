@@ -221,6 +221,7 @@
             </div>
 
             <select
+              id="flavour"
               class="form-select mb-3"
               aria-label="Default select example"
             >
@@ -234,6 +235,7 @@
             </select>
 
             <select
+              id="size"
               class="form-select mb-3"
               aria-label="Default select example"
             >
@@ -244,6 +246,7 @@
             </select>
 
             <select
+              id="crust"
               class="form-select mb-3"
               aria-label="Default select example"
             >
@@ -251,7 +254,6 @@
               <option value="thin">Thin crust</option>
               <option value="thick">Thick crust</option>
               <option value="deep">Deep Dish crust</option>
-              <option value="pan">Pan Pizza crust</option>
             </select>
 
             <div class="mb-3">
@@ -262,7 +264,7 @@
                     class="form-check-input"
                     type="checkbox"
                     value="cheese"
-                    id="cheese"
+                    name="toppings"
                   />
                   <label class="form-check-label" for="cheese">
                     Extra Cheese
@@ -273,7 +275,7 @@
                     class="form-check-input"
                     type="checkbox"
                     value="artichokes"
-                    id="artichokes"
+                    name="toppings"
                   />
                   <label class="form-check-label" for="artichokes">
                     Artichokes
@@ -284,7 +286,7 @@
                     class="form-check-input"
                     type="checkbox"
                     value="mushrooms"
-                    id="mushrooms"
+                    name="toppings"
                   />
                   <label class="form-check-label" for="mushrooms">
                     Mushrooms
@@ -295,7 +297,7 @@
                     class="form-check-input"
                     type="checkbox"
                     value="mozzarella"
-                    id="mozzarella"
+                    name="toppings"
                   />
                   <label class="form-check-label" for="mozzarella">
                     Mozzarella
@@ -306,7 +308,7 @@
                     class="form-check-input"
                     type="checkbox"
                     value="bacon"
-                    id="bacon"
+                    name="toppings"
                   />
                   <label class="form-check-label" for="bacon"> Bacon </label>
                 </div>
@@ -315,7 +317,7 @@
                     class="form-check-input"
                     type="checkbox"
                     value="pepperoni"
-                    id="pepperoni"
+                    name="toppings"
                   />
                   <label class="form-check-label" for="pepperoni">
                     Pepperoni
@@ -344,7 +346,7 @@
               >
             </div>
 
-            <div class="form-floating mb-4">
+            <div class="form-floating mb-4" id="loc">
               <textarea
                 class="form-control"
                 placeholder="Enter the delivery location"
