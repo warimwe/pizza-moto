@@ -176,6 +176,33 @@ $(document).ready(function () {
       number
     ) {
       var total = totalPrice(size, crust, toppingsArray, delivery, number);
+      if (location) {
+        $(".modal-body").text(
+          "Hello " +
+            name +
+            ", your order of a " +
+            size +
+            ", " +
+            flavour +
+            ", pizza has been received and will be delivered to " +
+            location +
+            ". You will pay a total of " +
+            total +
+            ".Thank you."
+        );
+      } else {
+        $(".modal-body").text(
+          "Hello " +
+            name +
+            ", your order of a " +
+            size +
+            ", " +
+            flavour +
+            ", pizza has been received and will be ready for pick up in 20 minutes. You will pay a total of " +
+            total +
+            ".Thank you."
+        );
+      }
       $("#staticBackdrop").modal("show");
       event.preventDefault();
     } else {
