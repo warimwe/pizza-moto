@@ -225,7 +225,9 @@
               class="form-select mb-3"
               aria-label="Default select example"
             >
-              <option selected>Choose a flavour</option>
+              <option selected disabled value="placeholder">
+                Choose a flavour
+              </option>
               <option value="chicken">BBQ Chicken Pizza</option>
               <option value="pepperoni">Pepperoni Pizza</option>
               <option value="margherita">Margherita Pizza</option>
@@ -239,7 +241,9 @@
               class="form-select mb-3"
               aria-label="Default select example"
             >
-              <option selected>Choose a size</option>
+              <option selected disabled value="placeholder">
+                Choose a size
+              </option>
               <option value="regular">Regular</option>
               <option value="medium">Medium</option>
               <option value="large">Large</option>
@@ -250,7 +254,9 @@
               class="form-select mb-3"
               aria-label="Default select example"
             >
-              <option selected>Choose a crust</option>
+              <option selected disabled value="placeholder">
+                Choose a crust
+              </option>
               <option value="thin">Thin crust</option>
               <option value="thick">Thick crust</option>
               <option value="deep">Deep Dish crust</option>
@@ -361,10 +367,9 @@
               Reset
             </button>
             <button
+              id="order-submit"
               type="submit"
               class="btn btn-primary float-end"
-              data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop"
             >
               Submit
             </button>
@@ -402,7 +407,11 @@
             <button type="reset" class="btn btn-warning float-start">
               Reset
             </button>
-            <button type="submit" class="btn btn-primary float-end">
+            <button
+              type="submit"
+              class="btn btn-primary float-end"
+              id="contact-submit"
+            >
               Submit
             </button>
           </form>
@@ -422,7 +431,7 @@
       </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- Modal to display on form submission -->
     <div
       class="modal fade"
       id="staticBackdrop"
@@ -438,7 +447,7 @@
             <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close close-modal"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
@@ -447,12 +456,11 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-secondary close-modal"
               data-bs-dismiss="modal"
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Understood</button>
           </div>
         </div>
       </div>

@@ -168,21 +168,23 @@ $(document).ready(function () {
       toppingsArray.push(this.value);
     });
 
-    console.log(toppingsArray);
-
-    var total = totalPrice(size, crust, toppingsArray, delivery, number);
-
-    // var order1 = order(size, crust, toppingsArray, delivery, number);
-
-    // totalPrice();
-
-    // console.log(order1.size);
-    $("form").reset();
-
-    if (location) {
+    if (
+      name &&
+      flavour != "placeholder" &&
+      size != "placeholder" &&
+      crust != "placeholder" &&
+      number
+    ) {
+      var total = totalPrice(size, crust, toppingsArray, delivery, number);
+      $("#staticBackdrop").modal("show");
+      event.preventDefault();
+    } else {
+      alert("Fill the order details correctly");
     }
+  });
 
-    event.preventDefault();
+  $(".close-modal").click(function () {
+    location.reload();
   });
 
   $("form#contact").submit(function (event) {
@@ -197,7 +199,7 @@ $(document).ready(function () {
           name +
           ", we have received your message. Thank you for reaching out to us."
       );
-      $("form").reset();
+      // $("form").reset();
     } else {
       alert("Please fill the form correctly");
     }
