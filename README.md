@@ -1,6 +1,6 @@
 # Pizza Moto - Annette Warimwe
 
-#### This is a webpage of a pizza restarant that allows the user to make orders and have the orders delivered.
+#### This is a webpage of a pizza restaurant that allows the user to make orders and have the orders delivered.
 
 #### By **Annette Warimwe**
 
