@@ -226,6 +226,7 @@ $(document).ready(function () {
       $("#staticBackdrop").modal("show");
       event.preventDefault();
     } else {
+      event.preventDefault();
       alert("Fill the order details correctly");
     }
   });
