@@ -1,13 +1,5 @@
 // Business Logic
 
-function order(size, price, crust, toppings, delivery) {
-  this.size = size;
-  this.price = price;
-  this.crust = crust;
-  this.toppings = toppings;
-  this.delivery = delivery;
-}
-
 function totalPrice(size, crust, toppingsArray, delivery, number) {
   var total = 0;
   if (size === "regular") {
@@ -51,6 +43,8 @@ function totalPrice(size, crust, toppingsArray, delivery, number) {
     }
 
     console.log(total);
+
+    return total;
   } else if (size === "medium") {
     total += 800;
 
@@ -92,6 +86,8 @@ function totalPrice(size, crust, toppingsArray, delivery, number) {
     }
 
     console.log(total);
+
+    return total;
   } else if (size === "large") {
     total += 1100;
 
@@ -138,9 +134,44 @@ function totalPrice(size, crust, toppingsArray, delivery, number) {
   }
 }
 
-// if (order.size==='large') {
-//   order.price=
-// }
+// Message Constructor
+function Message(name, size, flavour, price, location) {
+  this.name = name;
+  this.size = size;
+  this.flavour = flavour;
+  this.price = price;
+  this.location = location;
+}
+
+Message.prototype.addMessageWithDelivery = function () {
+  return (
+    "Hello " +
+    this.name +
+    ", your order of a " +
+    this.size +
+    ", " +
+    this.flavour +
+    " pizza has been received. You will pay a total of " +
+    this.price +
+    ". Your order will be delivered to " +
+    this.location +
+    ".Thank you."
+  );
+};
+
+Message.prototype.addMessageWithoutDelivery = function () {
+  return (
+    "Hello " +
+    this.name +
+    ", your order of a " +
+    this.size +
+    ", " +
+    this.flavour +
+    " pizza has been received and will be ready for pick up in 20 minutes. You will pay a total of " +
+    this.price +
+    ".Thank you."
+  );
+};
 
 // UI Logic
 $(document).ready(function () {
@@ -164,6 +195,15 @@ $(document).ready(function () {
 
     var toppingsArray = [];
 
+    console.log(name);
+    console.log(flavour);
+    console.log(size);
+    console.log(crust);
+    console.log(toppingsArray);
+    console.log(number);
+    console.log(delivery);
+    console.log(location);
+
     toppings.each(function () {
       toppingsArray.push(this.value);
     });
@@ -176,32 +216,12 @@ $(document).ready(function () {
       number
     ) {
       var total = totalPrice(size, crust, toppingsArray, delivery, number);
-      if (location) {
-        $(".modal-body").text(
-          "Hello " +
-            name +
-            ", your order of a " +
-            size +
-            ", " +
-            flavour +
-            ", pizza has been received and will be delivered to " +
-            location +
-            ". You will pay a total of " +
-            total +
-            ".Thank you."
-        );
+      if (delivery) {
+        var message = new Message(name, size, flavour, total, location);
+        $(".modal-body").text(message.addMessageWithDelivery());
       } else {
-        $(".modal-body").text(
-          "Hello " +
-            name +
-            ", your order of a " +
-            size +
-            ", " +
-            flavour +
-            ", pizza has been received and will be ready for pick up in 20 minutes. You will pay a total of " +
-            total +
-            ".Thank you."
-        );
+        var message = new Message(name, size, flavour, total, "no location");
+        $(".modal-body").text(message.addMessageWithoutDelivery());
       }
       $("#staticBackdrop").modal("show");
       event.preventDefault();
